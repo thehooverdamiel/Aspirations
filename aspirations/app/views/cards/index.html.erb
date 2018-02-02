@@ -1,0 +1,11 @@
+<h1>Cards</h1>
+<% @cards.each do |card| %>
+		<h3><%= card.title %> </h3>
+		<p><%= card.text %> </p>
+
+		<%= link_to "See full", card %>
+		<%= link_to "Edit", edit_card_path(card) %>
+		<%= link_to "Destroy", card_path(card), method: :delete, data: {confirm: 'you sure?'} %>
+<% end %>
+
+<%= link_to "New Card", new_card_url %>
