@@ -9,9 +9,8 @@
   </head>
 
   <body>
-  	<% if flash[:notice] %>
-  		<p><%= flash[:notice] %> </p>
-  	<% end %>
+  	<p><%= flash[:notice] %> </p>
+    <h4><%= flash[:alert] %> </h4>
   	
     <%= yield %>
   </body>
