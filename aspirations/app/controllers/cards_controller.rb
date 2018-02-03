@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-  	@cards = Card.all
+  	@cards = Card.where(user_id: current_user)
   end
 
   def new
@@ -11,6 +11,8 @@ class CardsController < ApplicationController
 
   def create
   	@card = Card.new(card_params)
+
+    @card.user = current_user
 
   	@card.save
   	redirect_to cards_url
