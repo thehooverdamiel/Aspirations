@@ -50,7 +50,7 @@ end
 
 group :production do
 	# Heroku demands Postgres, and we do as Heroku commands
-	gem 'pg'
+	gem 'pg', '~> 0.18'
   # This gem was recommended for deploying rails stuff, we can only hope it's a good thing
   gem 'rails_12factor'
 end
