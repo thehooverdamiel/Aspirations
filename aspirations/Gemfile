@@ -49,6 +49,7 @@ group :development do
 end
 
 group :production do
+	# Heroku demands Postgres, and we do as Heroku commands
 	gem 'pg'
 end
 
