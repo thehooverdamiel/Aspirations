@@ -12,13 +12,13 @@
 
     <header class="container-fluid">
       <section class="row alerts">
-        <div class="col-xs"
+        <div class="col">
           <p><%= flash[:notice] %> </p>
           <h4><%= flash[:alert] %> </h4>
         </div>
       </section>
       <section class="row">
-        <div class="col-xs">
+        <div class="col">
           <% if user_signed_in? %>
             <p>current user: <%= current_user.email %></p>
             <p><%= link_to 'Log out', destroy_user_session_path, method: :delete %></p>
@@ -31,5 +31,6 @@
   <div class="container-fluid">
     <%= yield %>
   </div>
+
   </body>
 </html>
