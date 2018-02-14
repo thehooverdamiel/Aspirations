@@ -1,0 +1,22 @@
+.sign-form {
+	:first-child {
+		text-align:center;
+	}
+
+	form {
+		width:100%;
+		max-width:300px;
+		margin:auto;
+
+		.field {
+			input[type="email"],
+			input[type="password"] {
+				width:100%;
+			}
+		}
+	}
+}
+
+.actions {
+	margin-top: 15px;
+}
