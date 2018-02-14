@@ -1,3 +1,20 @@
 // Place all the styles related to the cards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.asp-cards {
+	.card {
+		margin-top: 30px;
+		.card-body {
+			&, &>* {
+				transition-duration:0.3s;
+			}
+				&:hover {
+					background-color:$primary;
+					* {
+						color:$primary-invert;
+					}
+				}
+			}
+		}
+	}

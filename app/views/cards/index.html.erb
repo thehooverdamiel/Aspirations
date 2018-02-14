@@ -1,11 +1,30 @@
-<h1>Cards</h1>
-<% @cards.each do |card| %>
-		<h3><%= card.title %> </h3>
-		<p><%= card.text %> </p>
+<section class="row">
+	<div class="col">
+		<h1>Cards</h1>
+	</div>
+</section>
 
-		<%= link_to "See full", card %>
-		<%= link_to "Edit", edit_card_path(card) %>
-		<%= link_to "Destroy", card_path(card), method: :delete, data: {confirm: 'Are you sure you want to delete this card?'} %>
-<% end %>
+<section class="row asp-cards">
+	<% @cards.each do |card| %>
+		<article class="col-12 col-sm-6 col-md-4">
+				<div class="card">
+				  <div class="card-body">
+				  	<%= link_to card, class: 'content no-linkiness' do %>
+				  		<h3><%= card.title %></h3>
+							<p><%= card.text %></p>
+						<% end %>
 
-<br><%= link_to "New Card", new_card_url %>
+						<%= link_to "Edit", edit_card_path(card) %>
+						<%= link_to "Destroy", card_path(card), method: :delete, data: {confirm: 'Are you sure you want to delete this card?'} %>
+				  </div>
+				</div>
+		</article>
+	<% end %>
+	
+</section>
+
+<section class="row">
+	<div class="col">
+		<br><%= link_to "New Card", new_card_url %>
+	</div>
+</section>

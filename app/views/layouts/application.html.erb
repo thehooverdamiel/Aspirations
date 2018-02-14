@@ -10,14 +10,14 @@
 
   <body>
 
-    <header class="container-fluid">
-      <section class="row alerts">
+    <header class="container">
+      <section class="row alerts text-center">
         <div class="col">
           <p><%= flash[:notice] %> </p>
           <h4><%= flash[:alert] %> </h4>
         </div>
       </section>
-      <section class="row">
+      <section class="row text-right">
         <div class="col">
           <% if user_signed_in? %>
             <p>current user: <%= current_user.email %></p>
@@ -28,7 +28,7 @@
   </header>
 
 
-  <div class="container-fluid">
+  <div class="container">
     <%= yield %>
   </div>
 
