@@ -2,22 +2,35 @@
 	<div class="col">
 		<h1>Cards</h1>
 	</div>
+	<div class="col">
+		<%= form_tag("/cards", method: "get") do %>
+			<%= label_tag(:search, "Search") %>
+			<%= text_field_tag(:search, @search_term) %>
+			<%= submit_tag("Search") %>
+		<% end %>
+	</div>
 </section>
 
 <section class="row asp-cards">
-	<% @cards.each do |card| %>
-		<article class="col-12 col-sm-6 col-md-4">
-				<div class="card">
-				  <div class="card-body">
-				  	<%= link_to card, class: 'content no-linkiness' do %>
-				  		<h3><%= card.title %></h3>
-							<p><%= card.text %></p>
-						<% end %>
+	<% if @cards.count > 0 %>
+		<% @cards.each do |card| %>
+			<article class="col-12 col-sm-6 col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<%= link_to card, class: 'content no-linkiness' do %>
+								<h3><%= card.title %></h3>
+									<p><%= card.text %></p>
+								<% end %>
 
-						<%= link_to "Edit", edit_card_path(card) %>
-						<%= link_to "Destroy", card_path(card), method: :delete, data: {confirm: 'Are you sure you want to delete this card?'} %>
-				  </div>
-				</div>
+								<%= link_to "Edit", edit_card_path(card) %>
+								<%= link_to "Destroy", card_path(card), method: :delete, data: {confirm: 'Are you sure you want to delete this card?'} %>
+						</div>
+					</div>
+			</article>
+		<% end %>
+	<% else %>
+		<article class="col">
+			<p>Looks like there aren't any cards here! Try <%= link_to "making one", new_card_path %>, or try searching with a different term.</p>
 		</article>
 	<% end %>
 	
