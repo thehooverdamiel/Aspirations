@@ -16,15 +16,15 @@
 		<% @cards.each do |card| %>
 			<article class="col-12 col-sm-6 col-md-4">
 					<div class="card">
-					<div class="card-body">
-						<%= link_to card, class: 'content no-linkiness' do %>
-							<h3><%= card.title %></h3>
-								<p><%= card.text %></p>
-							<% end %>
+						<div class="card-body">
+							<%= link_to card, class: 'content no-linkiness' do %>
+								<h3><%= card.title %></h3>
+									<p><%= card.text %></p>
+								<% end %>
 
-							<%= link_to "Edit", edit_card_path(card) %>
-							<%= link_to "Destroy", card_path(card), method: :delete, data: {confirm: 'Are you sure you want to delete this card?'} %>
-					</div>
+								<%= link_to "Edit", edit_card_path(card) %>
+								<%= link_to "Destroy", card_path(card), method: :delete, data: {confirm: 'Are you sure you want to delete this card?'} %>
+						</div>
 					</div>
 			</article>
 		<% end %>
