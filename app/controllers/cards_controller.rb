@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    if params[:search]
+  if params[:search]
       @cards = Card.where(user_id: current_user).where("title LIKE ?", "%#{params[:search]}%")
       @search_term = params[:search]
     else 
